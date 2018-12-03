@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Database Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <link href="{% static 'files/17_03_inputs/styles.css' %}" type="text/css" rel="stylesheet"/>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body
+  {
+    background-image:url("{% static 'images/window.png' %}" );
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <br><br><br><br>
+    
+    <img src="{% static 'images/alarm.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id1" class="btn btn-default">Alarms & Clock</button><br><br>
+
+    <img src="{% static 'images/calc.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id2" class="btn btn-default">Calculator</button><br><br>
+    
+    <img src="{% static 'images/camera.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id4" class="btn btn-default">Camera</button><br><br>
+
+    <img src="{% static 'images/documents.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id7" class="btn btn-default">Documents</button><br><br>
+
+    
+    <img src="{% static 'images/fb.png' %}" width="50" height="34" alt="icon"> 
+    <button type="button" id="id8" class="btn btn-default">Facebook</button><br><br>
+
+
+    <img src="{% static 'images/feedback.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id9" class="btn btn-default">Feedback Hub</button><br><br>
+
+    <img src="{% static 'images/help1.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id10" class="btn btn-default">Get Help</button><br><br>
+    <img src="{% static 'images/chrome.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id11" class="btn btn-default">Google Chrome</button><br><br>
+    <img src="{% static 'images/folder.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id12" class="btn btn-default">Local Disc C</button><br><br>
+
+    <img src="{% static 'images/map.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id14" class="btn btn-default">Maps</button><br><br>
+
+    <img src="{% static 'images/solataire.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id16" class="btn btn-default">Microsoft Solitaire Collection</button><br><br>
+
+    <img src="{% static 'images/movies.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id17" class="btn btn-default">Movies & TV</button><br><br>
+    <img src="{% static 'images/notepad.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id18" class="btn btn-default">Notepad</button><br><br>
+    <img src="{% static 'images/notepad2.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id19" class="btn btn-default">Notepad++</button><br><br>
+
+    <img src="{% static 'images/photos.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id24" class="btn btn-default">Photos</button><br><br>
+    <img src="{% static 'images/paint.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id25" class="btn btn-default">Paint 3D</button><br><br>
+    <img src="{% static 'images/microsoft_edge.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id26" class="btn btn-default">Internet Explorer</button><br><br>
+    <img src="{% static 'images/skype.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id28" class="btn btn-default">Skype</button><br><br>
+    <img src="{% static 'images/sticky.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id29" class="btn btn-default">Sticky Notes</button><br><br>
+    <img src="{% static 'images/tips.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id30" class="btn btn-default">Tips</button><br><br>
+
+    <img src="{% static 'images/recorder.jpeg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id32" class="btn btn-default">Voice Recorder</button><br><br>
+    <img src="{% static 'images/wordpad.jpg' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id33" class="btn btn-default">WordPad</button><br><br>
+    <img src="{% static 'images/weather.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id34" class="btn btn-default">Weather</button><br><br>
+
+    <img src="{% static 'images/mediaplayer.png' %}" width="50" height="34" alt="icon">
+    <button type="button" id="id36" class="btn btn-default">Windows Media Player</button><br><br>
+</div>
+
+
+</body>
+
+
+<script>
+  $(document).ready(function(){
+    $("#id1").click(function(){
+      $.get('/alarms',
+        function(response){  
+        });
+    });
+    $("#id2").click(function(){
+      $.get('/calc',
+        function(response){
+        });
+    });
+    $("#id4").click(function(){
+      $.get('/cam',
+        function(response){
+        });
+    });
+    $("#id7").click(function(){
+      $.get('/docs',
+        function(response){
+        });
+    });
+    $("#id8").click(function(){
+      $.get('/fb',
+        function(response){
+        });
+    });
+    $("#id9").click(function(){
+      $.get('/fd_hub',
+        function(response){
+        });
+    });
+    $("#id10").click(function(){
+      $.get('/get_help',
+        function(response){
+        });
+    });
+    $("#id11").click(function(){
+      $.get('/chrome',
+        function(response){
+        });
+    });
+    $("#id12").click(function(){
+      $.get('/c_drive',
+        function(response){
+        });
+    });
+
+    $("#id14").click(function(){
+      $.get('/maps',
+        function(response){
+        });
+    });
+    $("#id16").click(function(){
+      $.get('/solitaire',
+        function(response){
+        });
+    });
+    $("#id17").click(function(){
+      $.get('/movies',
+        function(response){
+        });
+    });
+    $("#id18").click(function(){
+      $.get('/notepad',
+        function(response){
+        });
+    });
+    $("#id19").click(function(){
+      $.get('/Notepad',
+        function(response){
+        });
+    });
+    $("#id24").click(function(){
+      $.get('/photos',
+        function(response){
+        });
+    });
+    $("#id25").click(function(){
+      $.get('/paint',
+        function(response){
+        });
+    });
+    $("#id26").click(function(){
+      $.get('/explorer',
+        function(response){
+        });
+    });
+    $("#id28").click(function(){
+      $.get('/skype',
+        function(response){
+        });
+    });
+    $("#id29").click(function(){
+      $.get('/sticky',
+        function(response){
+        });
+    });
+    $("#id30").click(function(){
+      $.get('/tips',
+        function(response){
+        });
+    });
+    $("#id32").click(function(){
+      $.get('/voicerecorder',
+        function(response){
+        });
+    });
+    $("#id33").click(function(){
+      $.get('/wordpad',
+        function(response){
+        });
+    });
+    $("#id34").click(function(){
+      $.get('/weather',
+        function(response){
+        });
+    });
+    $("#id36").click(function(){
+      $.get('/wmplayer',
+        function(response){
+        });
+    });
+  });
+</script>
+</html>

@@ -1,0 +1,119 @@
+{% load static %} <!--to use static files in our templates-->
+<!DOCTYPE html> <!--declaration for html document-->
+<html lang="en"><!--to define the language of a web page-->
+<head> <!--container for meta data-->
+  <title>User Interface of Windows 10</title><!--title of our webpage-->
+  <meta charset="utf-8"><!--to encode all characters (universal character set +transformation  format-b bit)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!--to render the width of the page-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!--javascript tag-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  div#hello {
+    height: 40px;
+    width:100%;
+    position: fixed;
+        left:0;
+    bottom:0;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    background-color:black;
+} 
+f{
+  font-size: 20px;
+}
+
+body{
+    background-image:url("{% static 'images/win.png' %}");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+  img:hover.chr{
+    background-color:red;
+  }
+</style>
+</head>
+<body>
+  <center><u><font color="white"><h3><i><b>USER INTERFACE OF WINDOWS 10</b></i></h3></font></u></center>
+
+    <img src="{% static 'images/ch.png' %}" alt="Workplace" class="chr" usemap="#workmap2" style="height:60px;width:60px" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'images/mediaplayer.png' %}" alt="Workplace" class="chr"usemap="#workmap7" style="height:60px;width:60px" ><br><br>
+    <font color="white"><p>Chrome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Window Media<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Player</p></font>
+    <img src="{% static 'images/mycomputer.png' %}" alt="Workplace" usemap="#workmap4" style="height:60px;width:60px"><br><br>
+    <font color="white"><p>This PC</p></font>
+    <img src="{% static 'images/explorer.png' %}" alt="Workplace" usemap="#workmap3" style="height:60px;width:60px"><br><br>
+     <font color="white"><p>Interner<br>Explorer</p></font>
+    <img src="{% static 'images/notepad++1.png' %}" alt="Workplace" usemap="#workmap5" style="height:60px;width:60px">
+    <font color="white"><p>Notepad++</p></font>
+    <img src="{% static 'images/wordpad.png' %}" alt="Workplace" usemap="#workmap6" style="height:60px;width:60px">
+    <font color="white"><p>Wordpad</p></font>
+    
+
+  <map name="workmap1"><!--to  highlight the area after reaching on that area-->
+      <area shape="circle" coords="34,44,270,350" alt="Computer" href="\apps">
+  </map>
+  <map name="workmap2">
+      <area shape="circle" coords="34,44,270,350" alt="Computer" id="chrome1">
+  </map>
+  <map name="workmap3">
+      <area shape="circle" coords="34,44,270,350" alt="Computer" id="explorer1">
+  </map>
+  <map name="workmap4">
+      <area shape="circle" coords="34,44,270,350" alt="Computer" id="PC1">
+  </map>
+  <map name="workmap5">
+      <area shape="circle" coords="34,44,270,350" alt="Computer" id="Notepad1">
+  </map>
+  <map name="workmap6">
+      <area shape="circle" coords="34,44,270,350" alt="Computer" id="wordpad1">
+  </map>
+  <map name="workmap7">
+      <area shape="circle" coords="34,44,270,350" alt="Computer" id="wmplayer1">
+  </map>
+
+<div id="hello"><!-- to add a area in our html document-->
+<img src="{% static 'images/icon.png' %}"  width="37px" height="30px" usemap="#workmap1">&nbsp;&nbsp;<button type="button" id="id33" class="btn btn-default" style="height:50px;width:345px"><f>Hey! Cortana is here!  just Click</f></button>&nbsp;&nbsp;&nbsp;<img src="{% static 'images/explorer.png' %}"  width="29px" height="29px" usemap="#workmap3">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'images/file.jpg' %}" usemap="#workmap4" width="35px" height="43px">&nbsp;<img src="{% static 'images/c.png' %}" usemap="#workmap2" width="53px" height="45px">
+</div><!--end of division tag-->
+</html><!--end of html tag-->
+
+</body><!--end of body tag-->
+<script>
+  $(document).ready(function(){
+    $("#id33").click(function(){
+      $.get('/cortana',
+        function(response){  
+        });
+    });
+    $("#Notepad1").click(function(){
+      $.get('/Notepad',
+        function(response){  
+        });
+    });
+    $("#wordpad1").click(function(){
+      $.get('/wordpad',
+        function(response){  
+        });
+    });
+    $("#chrome1").click(function(){
+      $.get('/chrome',
+        function(response){  
+        });
+    });
+    $("#explorer1").click(function(){
+      $.get('/explorer',
+        function(response){  
+        });
+    });
+    $("#wmplayer1").click(function(){
+      $.get('/wmplayer',
+        function(response){  
+        });
+    });
+    $("#PC1").click(function(){
+      $.get('/PC',
+        function(response){  
+        });
+    });
+  });
+</script>
+</html><!--end of html tag-->
